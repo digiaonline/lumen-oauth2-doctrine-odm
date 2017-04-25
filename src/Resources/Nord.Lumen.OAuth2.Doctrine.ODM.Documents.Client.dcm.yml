@@ -1,0 +1,15 @@
+Nord\Lumen\OAuth2\Doctrine\ODM\Documents\Client:
+  type: document
+  collection: oauth_clients
+  repositoryClass: Nord\Lumen\OAuth2\Doctrine\ODM\Repositories\ClientRepository
+  fields:
+    id:
+      type: id
+      id: true
+      strategy: AUTO
+    key:
+      type: string
+    secret:
+      type: string
+    name:
+      type: string

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mongo-mapping xmlns="http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xsi:schemaLocation="http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping
+                http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping.xsd">
+
+    <document name="Nord\Lumen\OAuth2\Doctrine\ODM\Documents\RefreshToken"
+              collection="oauth_refresh_tokens"
+              repository-class="Nord\Lumen\OAuth2\Doctrine\ODM\Repositories\RefreshTokenRepository">
+
+        <field name="id" id="true" strategy="AUTO" type="string"/>
+        <field name="token" type="string"/>
+        <field name="expire_time" type="date" fieldName="expireTime"/>
+
+        <reference-one field="accessToken" target-document="Nord\Lumen\OAuth2\Doctrine\ODM\Documents\AccessToken">
+            <cascade>
+                <remove/>
+            </cascade>
+        </reference-one>
+    </document>
+</doctrine-mongo-mapping>

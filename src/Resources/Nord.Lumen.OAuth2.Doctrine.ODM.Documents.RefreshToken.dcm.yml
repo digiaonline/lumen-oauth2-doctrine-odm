@@ -1,0 +1,19 @@
+Nord\Lumen\OAuth2\Doctrine\ODM\Documents\RefreshToken:
+  type: document
+  collection: oauth_refresh_tokens
+  repositoryClass: Nord\Lumen\OAuth2\Doctrine\ODM\Repositories\RefreshTokenRepository
+  fields:
+    id:
+      type: id
+      id: true
+      strategy: AUTO
+    token:
+      type: string
+    expireTime:
+      type: date
+      name: expire_time
+  referenceOne:
+    accessToken:
+      targetDocument: Nord\Lumen\OAuth2\Doctrine\ODM\Documents\AccessToken
+      name: access_token
+      cascade: remove
