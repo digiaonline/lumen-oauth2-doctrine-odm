@@ -1,0 +1,31 @@
+{
+  "name": "nordsoftware/lumen-oauth2-doctrine-odm",
+  "description": "Doctrine MongoDB storage connector for the https://github.com/nordsoftware/lumen-oauth2 module.",
+  "keywords": [
+    "laravel",
+    "lumen",
+    "doctrine",
+    "mongodb",
+    "odm",
+    "oauth2"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Kenneth Söderlund",
+      "email": "kenneth.soderlund@nordsoftware.com"
+    }
+  ],
+  "require": {
+    "nordsoftware/lumen-oauth2": "^3.0",
+    "doctrine/mongodb-odm": "^1.1"
+  },
+  "require-dev": {
+    "laravel/lumen-framework": ">=5.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Nord\\Lumen\\OAuth2\\Doctrine\\ODM\\": "src"
+    }
+  }
+}

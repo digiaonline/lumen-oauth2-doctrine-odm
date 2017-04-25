@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mongo-mapping xmlns="http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xsi:schemaLocation="http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping
+                http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping.xsd">
+
+    <document name="Nord\Lumen\OAuth2\Doctrine\ODM\Documents\Session"
+              collection="oauth_sessions"
+              repository-class="Nord\Lumen\OAuth2\Doctrine\ODM\Repositories\SessionRepository">
+
+        <field name="id" id="true" strategy="AUTO" type="string"/>
+        <field name="owner_type" fieldName="ownerType" type="string"/>
+        <field name="owner_id" fieldName="ownerId" type="string"/>
+        <field name="client_redirect_uri" fieldName="clientRedirectUri" type="string" nullable="true"/>
+
+        <reference-one field="client" fieldName="client_id"
+                       target-document="Nord\Lumen\OAuth2\Doctrine\ODM\Documents\Client">
+        </reference-one>
+    </document>
+</doctrine-mongo-mapping>
+

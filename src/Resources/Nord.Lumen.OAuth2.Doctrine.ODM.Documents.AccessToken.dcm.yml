@@ -1,0 +1,17 @@
+Nord\Lumen\OAuth2\Doctrine\ODM\Documents\AccessToken:
+  type: document
+  collection: oauth_access_tokens
+  repositoryClass: Nord\Lumen\OAuth2\Doctrine\ODM\Repositories\AccessTokenRepository
+  fields:
+    id:
+      type: id
+      id: true
+      strategy: AUTO
+    token:
+      type: string
+    expireTime:
+      type: date
+      name: expire_time
+  referenceOne:
+    session:
+      targetDocument: Nord\Lumen\OAuth2\Doctrine\ODM\Documents\Session

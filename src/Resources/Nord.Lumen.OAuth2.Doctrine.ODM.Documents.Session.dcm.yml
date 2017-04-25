@@ -1,0 +1,22 @@
+Nord\Lumen\OAuth2\Doctrine\ODM\Documents\Session:
+  type: document
+  collection: oauth_sessions
+  repositoryClass: Nord\Lumen\OAuth2\Doctrine\ODM\Repositories\SessionRepository
+  fields:
+    id:
+      type: id
+      id: true
+      strategy: AUTO
+    ownerType:
+      type: string
+      name: owner_type
+    ownerId:
+      type: string
+      name: owner_id
+    clientRedirectUri:
+      type: string
+      name: client_redirect_uri
+      nullable: true
+  referenceOne:
+    client:
+      targetDocument: Nord\Lumen\OAuth2\Doctrine\ODM\Documents\Client
