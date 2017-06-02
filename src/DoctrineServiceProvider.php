@@ -6,11 +6,13 @@ use Doctrine\ODM\MongoDB\DocumentManager;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider;
 use League\OAuth2\Server\Storage\AccessTokenInterface;
+use League\OAuth2\Server\Storage\AuthCodeInterface;
 use League\OAuth2\Server\Storage\ClientInterface;
 use League\OAuth2\Server\Storage\RefreshTokenInterface;
 use League\OAuth2\Server\Storage\ScopeInterface;
 use League\OAuth2\Server\Storage\SessionInterface;
 use Nord\Lumen\OAuth2\Doctrine\ODM\Storages\AccessTokenStorage;
+use Nord\Lumen\OAuth2\Doctrine\ODM\Storages\AuthCodeStorage;
 use Nord\Lumen\OAuth2\Doctrine\ODM\Storages\ClientStorage;
 use Nord\Lumen\OAuth2\Doctrine\ODM\Storages\RefreshTokenStorage;
 use Nord\Lumen\OAuth2\Doctrine\ODM\Storages\ScopeStorage;
@@ -60,5 +62,6 @@ class DoctrineServiceProvider extends ServiceProvider
         $container->bind(RefreshTokenInterface::class, RefreshTokenStorage::class);
         $container->bind(ScopeInterface::class, ScopeStorage::class);
         $container->bind(SessionInterface::class, SessionStorage::class);
+        $container->bind(AuthCodeInterface::class, AuthCodeStorage::class);
     }
 }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mongo-mapping xmlns="http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xsi:schemaLocation="http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping
+                http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping.xsd">
+
+    <document name="Nord\Lumen\OAuth2\Doctrine\ODM\Documents\AuthCode"
+              collection="oauth_auth_codes"
+              repository-class="Nord\Lumen\OAuth2\Doctrine\ODM\Repositories\AuthCodeRepository">
+
+        <field name="id" id="true" strategy="AUTO" type="string"/>
+        <field name="auth_code" type="string" fieldName="authCode"/>
+        <field name="expire_time" type="date" fieldName="expireTime"/>
+        <field name="client_redirect_uri" type="date" fieldName="redirectUri"/>
+
+        <reference-one field="session" target-document="Nord\Lumen\OAuth2\Doctrine\ODM\Documents\Session"/>
+
+    </document>
+</doctrine-mongo-mapping>

@@ -1,0 +1,21 @@
+Nord\Lumen\OAuth2\Doctrine\ODM\Documents\AuthCode:
+  type: document
+  collection: oauth_auth_codes
+  repositoryClass: Nord\Lumen\OAuth2\Doctrine\ODM\Repositories\AuthCodeRepository
+  fields:
+    id:
+      type: id
+      id: true
+      strategy: AUTO
+    authCode:
+      type: string
+      name: auth_code
+    expireTime:
+      type: date
+      name: expire_time
+    redirectUri:
+      type: string
+      name: client_redirect_uri
+  referenceOne:
+    session:
+      targetDocument: Nord\Lumen\OAuth2\Doctrine\ODM\Documents\Session
