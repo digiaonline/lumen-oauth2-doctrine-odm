@@ -62,7 +62,13 @@ class SessionStorage extends DoctrineStorage implements SessionInterface
      */
     public function getByAuthCode(AuthCodeEntity $authCode)
     {
-        throw new \Exception('Not implemented');
+        $session = $this->sessionRepository->findByAuthCode($authCode->getId());
+
+        if ($session === null) {
+            throw new SessionNotFound();
+        }
+
+        return $this->createEntity($session);
     }
 
 
