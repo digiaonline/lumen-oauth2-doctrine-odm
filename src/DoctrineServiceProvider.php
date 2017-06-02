@@ -41,6 +41,10 @@ class DoctrineServiceProvider extends ServiceProvider
             return new AccessTokenStorage($documentManager);
         });
 
+        $container->bind(AuthCodeStorage::class, function () use ($documentManager) {
+            return new AuthCodeStorage($documentManager);
+        });
+
         $container->bind(ClientStorage::class, function () use ($documentManager) {
             return new ClientStorage($documentManager);
         });
@@ -58,10 +62,10 @@ class DoctrineServiceProvider extends ServiceProvider
         });
 
         $container->bind(AccessTokenInterface::class, AccessTokenStorage::class);
+        $container->bind(AuthCodeInterface::class, AuthCodeStorage::class);
         $container->bind(ClientInterface::class, ClientStorage::class);
         $container->bind(RefreshTokenInterface::class, RefreshTokenStorage::class);
         $container->bind(ScopeInterface::class, ScopeStorage::class);
         $container->bind(SessionInterface::class, SessionStorage::class);
-        $container->bind(AuthCodeInterface::class, AuthCodeStorage::class);
     }
 }
