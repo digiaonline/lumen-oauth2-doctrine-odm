@@ -25,6 +25,11 @@ NOTE: Always keep an Unreleased version at the top of this CHANGELOG for easy up
 ### Security
 - To invite users to upgrade in case of vulnerabilities.
 
+## [1.1.2] - 2017-06-05
+### Added
+- Support for clientRedirectUri in Session.
+- Support for getting the client from Session.
+
 ## [1.1.1] - 2017-06-02
 ### Added
 - Missing container binding.
@@ -39,7 +44,8 @@ NOTE: Always keep an Unreleased version at the top of this CHANGELOG for easy up
 - Project files.
 - Support XML, Annotations and YAML mapping.
 
-[Unreleased]: https://github.com/nordsoftware/lumen-oauth2-doctrine-odm/compare/1.1.1...HEAD
+[Unreleased]: https://github.com/nordsoftware/lumen-oauth2-doctrine-odm/compare/1.1.2...HEAD
+[1.1.2]: https://github.com/nordsoftware/lumen-oauth2-doctrine-odm/compare/1.1.1...1.1.2
 [1.1.1]: https://github.com/nordsoftware/lumen-oauth2-doctrine-odm/compare/1.1.0...1.1.1
 [1.1.0]: https://github.com/nordsoftware/lumen-oauth2-doctrine-odm/compare/1.0.0...1.1.0
 [1.0.0]: https://github.com/nordsoftware/lumen-oauth2-doctrine-odm/tree/1.0.0

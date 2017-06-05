@@ -43,12 +43,14 @@ class Session extends Entity
      * @param string $ownerType
      * @param string $ownerId
      * @param Client $client
+     * @param string|null $clientRedirectUri
      */
-    public function __construct($ownerType, $ownerId, Client $client)
+    public function __construct($ownerType, $ownerId, Client $client, $clientRedirectUri = null)
     {
         $this->ownerType = $ownerType;
         $this->ownerId = $ownerId;
         $this->client = $client;
+        $this->clientRedirectUri = $clientRedirectUri;
     }
 
 
@@ -67,5 +69,21 @@ class Session extends Entity
     public function getOwnerId()
     {
         return $this->ownerId;
+    }
+
+    /**
+     * @return Client
+     */
+    public function getClient()
+    {
+        return $this->client;
+    }
+
+    /**
+     * @return string
+     */
+    public function getClientRedirectUri()
+    {
+        return $this->clientRedirectUri;
     }
 }
