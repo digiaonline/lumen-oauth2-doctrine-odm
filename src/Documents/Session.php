@@ -70,6 +70,15 @@ class Session extends Entity
     {
         return $this->ownerId;
     }
+
+    /**
+     * @return Client
+     */
+    public function getClient()
+    {
+        return $this->client;
+    }
+
     /**
      * @return string
      */
